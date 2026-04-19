@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Iterative method
+int factorial_iterative(int n) {
+    int fact = 1;
+    for(int i = 1; i <= n; i++)
+        fact *= i;
+    return fact;
+}
+
+// Recursive method
+int factorial_recursive(int n) {
+    if(n == 0)
+        return 1;
+    else
+        return n * factorial_recursive(n - 1);
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if(num < 0)
+        printf("Factorial not defined for negative numbers.\n");
+    else {
+        printf("Iterative Factorial: %d\n", factorial_iterative(num));
+        printf("Recursive Factorial: %d\n", factorial_recursive(num));
+    }
+    return 0;
+}
