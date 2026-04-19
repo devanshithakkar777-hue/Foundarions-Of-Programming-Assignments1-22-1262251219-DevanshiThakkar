@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int num, digit;
+
+    printf("Enter an integer number: ");
+    scanf("%d", &num);
+
+    printf("Digits in reverse order: ");
+    if(num == 0) {
+        printf("0");
+    } else {
+        if(num < 0) num = -num; // handle negative input
+        while(num != 0) {
+            digit = num % 10;
+            printf("%d ", digit);
+            num /= 10;
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
