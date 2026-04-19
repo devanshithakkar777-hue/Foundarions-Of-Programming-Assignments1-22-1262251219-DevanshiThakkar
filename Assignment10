@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float x, y, result;
+    int i, num, fact = 1;
+
+    printf("Simple Calculator\n");
+    printf("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n");
+    printf("5. Power (x^y)\n6. Factorial (x!)\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1:
+            printf("Enter two numbers: ");
+            scanf("%f %f", &x, &y);
+            result = x + y;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case 2:
+            printf("Enter two numbers: ");
+            scanf("%f %f", &x, &y);
+            result = x - y;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case 3:
+            printf("Enter two numbers: ");
+            scanf("%f %f", &x, &y);
+            result = x * y;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case 4:
+            printf("Enter two numbers: ");
+            scanf("%f %f", &x, &y);
+            if(y != 0)
+                result = x / y;
+            else {
+                printf("Error: Division by zero.\n");
+                return 0;
+            }
+            printf("Result = %.2f\n", result);
+            break;
+
+        case 5:
+            printf("Enter base and exponent: ");
+            scanf("%f %f", &x, &y);
+            result = 1;
+            for(i = 1; i <= y; i++)
+                result *= x;
+            printf("Result = %.2f\n", result);
+            break;
+
+        case 6:
+            printf("Enter a number: ");
+            scanf("%d", &num);
+            if(num < 0) {
+                printf("Error: Factorial of negative number not defined.\n");
+                return 0;
+            }
+            for(i = 1; i <= num; i++)
+                fact *= i;
+            printf("Result = %d\n", fact);
+            break;
+
+        default:
+            printf("Invalid choice.\n");
+    }
+
+    return 0;
+}
